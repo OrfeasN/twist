@@ -1,0 +1,25 @@
+//////////////////////////////////////////////
+// COLORS
+$color-black: #111111;
+$color-white: #FEFEFE;
+$color-gray-light: #FAFAFA;
+$color-gray-dark: #EDEDED;
+$color-primary-light: #009BDB;
+$color-primary-dark: #00609B;
+
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+}
+
+
+body{
+    background: $color-white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-black;
+}
