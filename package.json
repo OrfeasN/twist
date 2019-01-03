@@ -1,0 +1,16 @@
+{
+  "name": "twist",
+  "version": "1.0.0",
+  "description": "A local movie theater website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "lite-server"
+  },
+  "author": "Orfeas Nafpliotis",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
