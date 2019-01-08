@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <!-- Custom Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,900" rel="stylesheet">
     <!-- Custom CSS -->
@@ -18,19 +20,133 @@
 <header class="landing-page">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-sm">
+    <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
             <a href="#" class="navbar-brand">Twist</a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a href="#" class="nav-link nav-link--active">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Playing Now</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="#" class="nav-link nav-link--cta">Book a Ticket</a></li>
-            </ul>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary btn-lg nav-cta">Book a Ticket</button>
+                    </li>
+                </ul>
+            </div>
         </div>
+
     </nav>
 
+    <!-- Carousel -->
+    
+    <div id="landing-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#landing-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#landing-carousel" data-slide-to="1"></li>
+            <li data-target="#landing-carousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <h4>Action, Adventure, Fantasy</h4>
+                    <h1>Avengers: Infinity War</h1>
+                    <div class="row d-none d-sm-block">
+                        <p class="col-sm-8">The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                    </div>
+                    <div class="carousel-info">
+                        <div class="age-rating">PG-13</div>
+                        <a href="#" class="carousel-cta">
+                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
+                            More info
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h4>Action, Adventure, Sci-Fi</h4>
+                    <h1>Jurassic World: Fallen Kingdom</h1>
+                    <div class="row d-none d-sm-block">
+                        <p class="col-sm-8">When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                    </div>
+                    <div class="carousel-info">
+                        <div class="age-rating">PG-13</div>
+                        <a href="#" class="carousel-cta">
+                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
+                            More info
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <h4>Animation, Adventure, Comedy</h4>
+                    <h1>Ralph Breaks the Internet</h1>
+                    <div class="row d-none d-sm-block">
+                        <p class="col-sm-8">Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                    </div>
+                    <div class="carousel-info">
+                        <div class="age-rating">PG</div>
+                        <a href="#" class="carousel-cta">
+                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
+                            More info
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </header>
+    
+
+<footer>
+    <div class="container">
+        <!-- Social Media Icons -->
+        <div class="social-list col-sm-4 offset-sm-4">
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-facebook"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-twitter"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-instagram"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-youtube"></use></svg>
+            </a>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="footer-contact col-sm-6 offset-sm-3">
+            <span class="footer-contact__text">
+                <svg class="footer-contact__icon"><use xlink:href="images/sprite.svg#icon-map"></use></svg>
+                    24 Centeroad St., Athens
+            </span>
+            <span class="footer-contact__text">
+                <svg class="footer-contact__icon"><use xlink:href="images/sprite.svg#icon-whatsapp"></use></svg>
+                    0330 123 4567
+            </span>
+        </div>
+        <!-- Legal Text -->
+        <p class="footer-legal">2018 &copy; TWIST / Designed & developed by Orfeas Nafpliotis.</p>
+    </div>
+    
+</footer>
     
     
 

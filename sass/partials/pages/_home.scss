@@ -1,6 +1,152 @@
 .landing-page{
     height: 100vh;
-    background-image: url('/images/avengers-landscape.jpg');
-    background-size: cover;
-    background-position: center;
+    position: relative;
+}
+
+////////////////////////////////////////////////////////////
+// Carousel
+#landing-carousel{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    // Carousel Indicators
+    .carousel-indicators{
+
+        li{
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid $color-primary-light;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+        }
+        li.active{
+            background-color: $color-primary-light;
+            box-shadow: 0px 0px 4px 0px rgba($color-white, .25);
+        }
+    }
+
+    .carousel-inner{
+        height: 100%;
+        width: 100%;
+    }
+
+    // Carousel Slides
+    .carousel-item{
+
+        // Slides Size
+        height: 100%;
+        width: 100%;
+
+        // Image Backgrounds
+        &:nth-child(1){background-image: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)), url(/images/avengers-landscape.jpg) }
+        &:nth-child(2){background-image: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)), url(/images/jurassic-landscape.jpg) }
+        &:nth-child(3){background-image: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)), url(/images/ralph-landscape.jpg) }
+        background-size: cover;
+        background-position: center;
+
+        // General Styling
+        color: $color-white;
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+            padding-bottom: 12rem;
+        }
+
+        h4{
+            color: $color-primary-light;
+            text-transform: uppercase;
+        }
+
+        h1{
+            font-size: 6.4rem;
+            font-weight: 200;
+        }
+
+        .carousel-info{
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .age-rating{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            height: 6rem;
+            width: 6rem;
+            border: 1px solid $color-white;
+        }
+
+        .carousel-cta{
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2rem;
+            padding: 1.5rem 3rem;
+            border-radius: 3rem;
+            color: $color-white;
+            text-transform: uppercase;
+            backface-visibility: hidden;
+
+            &:link,
+            &:visited{
+                background: linear-gradient(to top right, $color-primary-light, $color-primary-dark);
+                transition: all .1s ease-out;
+            }
+
+            &:hover{
+                text-decoration: none;
+                transform: translateY(-3px);
+                box-shadow: 0px 6px 12px -3px rgba($color-white, .25);
+            }
+
+            &:active{
+                transform: translateY(1px);
+                box-shadow: none;
+            }
+
+            svg{
+                margin-right: 1rem;
+                fill: currentColor;
+                height: 2.4rem;
+                width: 2.4rem;
+                
+            }
+        }
+
+
+        @media screen and (max-width: 576px){
+            h1{
+                font-size: 2.4rem;
+                font-weight: 400;
+            }
+
+            .carousel-info{
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 0;
+
+                .age-rating{
+                    font-size: .9rem;
+                    height: 3.9rem;
+                    width: 3.9rem;
+                }
+
+                .carousel-cta{
+                    margin-left: 0;
+                    margin-top: 2rem;;
+                }
+            }
+        }
+    }
+
+
 }

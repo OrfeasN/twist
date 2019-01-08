@@ -4,16 +4,8 @@ nav{
     background-color: rgba($color-black, .8);
     font-size: 1.4rem;
     color: $color-white;
-    
-    // Link Color Reset
-    a{
-        &:link,
-        &:visited{color: currentColor;}
-
-        &:hover{color: $color-primary-light;}
-
-        &:active{color: $color-primary-dark;}
-    }
+    position: relative;
+    z-index: 200;
 
     // Navigation Logo
     .navbar-brand{
@@ -22,31 +14,46 @@ nav{
         text-transform: uppercase;
     }
 
-    // Navigation List
-    .nav{
-        &-item{margin-left: 2rem;}
-    
-        &-link{
-            &--active{
+    // Link List
+    .navbar-nav{
+        padding: .7rem 0;
+
+        .nav-item{
+            margin-left: 1.4rem;
+
+            .nav-link{
                 &:link,
-                &:visited{color: $color-primary-dark;}
-    
+                &:visited{color: $color-white;}
+        
                 &:hover{color: $color-primary-light;}
-    
+        
                 &:active{color: $color-primary-dark;}
             }
 
-            &--cta{
+            // Styles for the Active Page Link
+            &.active{
+                .nav-link{
+                    &:link,
+                    &:visited{color: $color-primary-light;}
+            
+                    &:hover{color: $color-primary-dark;}
+        
+                    &:active{color: $color-primary-light;}
+                }
+            }
 
+            button.btn.btn-outline-primary.btn-lg.nav-cta{
                 &:link,
                 &:visited{
                     color: $color-primary-light;
                     border: 1px solid $color-primary-light;
+                    outline: none;
                 }
-
+        
                 &:hover{
                     color: $color-white;
                     background-color: $color-primary-light;
+                    border: 1px solid $color-primary-light;    
                 }
     
                 &:active{
@@ -55,9 +62,67 @@ nav{
                     border: 1px solid $color-primary-dark;
                 }
             }
+
+
         }
 
+        
+    }
+}
+
+//////////////////////////////////////////////
+// FOOTER
+footer{
+    background-color: $color-black;
+}
+
+.social-list{
+    padding: 6.4rem 0 1.5rem;
+    display: flex;
+    justify-content: space-around;
+
+    &__link:link,
+    &__link:visited{
+        .social-list__icon{fill: $color-white;}
     }
 
+    &__link:hover{
+        .social-list__icon{fill: $color-primary-light;}
+    }
+
+    &__link:active{
+        .social-list__icon{fill: $color-primary-dark;}
+    }
+
+    &__icon{
+        height:2.4rem;
+        width: 2.4rem;
+    }
+}
+
+.footer-contact{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3.9rem;
     
+    &__text{
+        color: $color-white;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon{
+        margin-right: 1rem;
+        fill: $color-white;
+        height: 2.4rem;
+        width: 2.4rem;
+    }
+}
+
+.footer-legal{
+    font-size: 1.2rem;
+    color: $color-white;
+    margin: 0;
+    padding: .6rem 0 1.2rem;
+    border-top: 1px solid $color-white;
 }

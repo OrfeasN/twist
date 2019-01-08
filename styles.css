@@ -5,7 +5,7 @@ html {
 body {
   background: #FEFEFE;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
   color: #111111; }
@@ -13,38 +13,176 @@ body {
 nav {
   background-color: rgba(17, 17, 17, 0.8);
   font-size: 1.4rem;
-  color: #FEFEFE; }
-  nav a:link, nav a:visited {
-    color: currentColor; }
-  nav a:hover {
-    color: #009BDB; }
-  nav a:active {
-    color: #00609B; }
+  color: #FEFEFE;
+  position: relative;
+  z-index: 200; }
   nav .navbar-brand {
     font-size: 1.4rem;
     font-weight: 900;
     text-transform: uppercase; }
-  nav .nav-item {
-    margin-left: 2rem; }
-  nav .nav-link--active:link, nav .nav-link--active:visited {
-    color: #00609B; }
-  nav .nav-link--active:hover {
-    color: #009BDB; }
-  nav .nav-link--active:active {
-    color: #00609B; }
-  nav .nav-link--cta:link, nav .nav-link--cta:visited {
-    color: #009BDB;
-    border: 1px solid #009BDB; }
-  nav .nav-link--cta:hover {
+  nav .navbar-nav {
+    padding: .7rem 0; }
+    nav .navbar-nav .nav-item {
+      margin-left: 1.4rem; }
+      nav .navbar-nav .nav-item .nav-link:link, nav .navbar-nav .nav-item .nav-link:visited {
+        color: #FEFEFE; }
+      nav .navbar-nav .nav-item .nav-link:hover {
+        color: #009BDB; }
+      nav .navbar-nav .nav-item .nav-link:active {
+        color: #00609B; }
+      nav .navbar-nav .nav-item.active .nav-link:link, nav .navbar-nav .nav-item.active .nav-link:visited {
+        color: #009BDB; }
+      nav .navbar-nav .nav-item.active .nav-link:hover {
+        color: #00609B; }
+      nav .navbar-nav .nav-item.active .nav-link:active {
+        color: #009BDB; }
+      nav .navbar-nav .nav-item button.btn.btn-outline-primary.btn-lg.nav-cta:link, nav .navbar-nav .nav-item button.btn.btn-outline-primary.btn-lg.nav-cta:visited {
+        color: #009BDB;
+        border: 1px solid #009BDB;
+        outline: none; }
+      nav .navbar-nav .nav-item button.btn.btn-outline-primary.btn-lg.nav-cta:hover {
+        color: #FEFEFE;
+        background-color: #009BDB;
+        border: 1px solid #009BDB; }
+      nav .navbar-nav .nav-item button.btn.btn-outline-primary.btn-lg.nav-cta:active {
+        color: #FEFEFE;
+        background-color: #00609B;
+        border: 1px solid #00609B; }
+
+footer {
+  background-color: #111111; }
+
+.social-list {
+  padding: 6.4rem 0 1.5rem;
+  display: flex;
+  justify-content: space-around; }
+  .social-list__link:link .social-list__icon, .social-list__link:visited .social-list__icon {
+    fill: #FEFEFE; }
+  .social-list__link:hover .social-list__icon {
+    fill: #009BDB; }
+  .social-list__link:active .social-list__icon {
+    fill: #00609B; }
+  .social-list__icon {
+    height: 2.4rem;
+    width: 2.4rem; }
+
+.footer-contact {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3.9rem; }
+  .footer-contact__text {
     color: #FEFEFE;
-    background-color: #009BDB; }
-  nav .nav-link--cta:active {
-    color: #FEFEFE;
-    background-color: #00609B;
-    border: 1px solid #00609B; }
+    display: flex;
+    align-items: center; }
+  .footer-contact__icon {
+    margin-right: 1rem;
+    fill: #FEFEFE;
+    height: 2.4rem;
+    width: 2.4rem; }
+
+.footer-legal {
+  font-size: 1.2rem;
+  color: #FEFEFE;
+  margin: 0;
+  padding: .6rem 0 1.2rem;
+  border-top: 1px solid #FEFEFE; }
 
 .landing-page {
   height: 100vh;
-  background-image: url("/images/avengers-landscape.jpg");
-  background-size: cover;
-  background-position: center; }
+  position: relative; }
+
+#landing-carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  #landing-carousel .carousel-indicators li {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #009BDB;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%; }
+  #landing-carousel .carousel-indicators li.active {
+    background-color: #009BDB;
+    box-shadow: 0px 0px 4px 0px rgba(254, 254, 254, 0.25); }
+  #landing-carousel .carousel-inner {
+    height: 100%;
+    width: 100%; }
+  #landing-carousel .carousel-item {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    color: #FEFEFE; }
+    #landing-carousel .carousel-item:nth-child(1) {
+      background-image: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(/images/avengers-landscape.jpg); }
+    #landing-carousel .carousel-item:nth-child(2) {
+      background-image: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(/images/jurassic-landscape.jpg); }
+    #landing-carousel .carousel-item:nth-child(3) {
+      background-image: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(/images/ralph-landscape.jpg); }
+    #landing-carousel .carousel-item .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding-bottom: 12rem; }
+    #landing-carousel .carousel-item h4 {
+      color: #009BDB;
+      text-transform: uppercase; }
+    #landing-carousel .carousel-item h1 {
+      font-size: 6.4rem;
+      font-weight: 200; }
+    #landing-carousel .carousel-item .carousel-info {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem; }
+    #landing-carousel .carousel-item .age-rating {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      height: 6rem;
+      width: 6rem;
+      border: 1px solid #FEFEFE; }
+    #landing-carousel .carousel-item .carousel-cta {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 2rem;
+      padding: 1.5rem 3rem;
+      border-radius: 3rem;
+      color: #FEFEFE;
+      text-transform: uppercase;
+      backface-visibility: hidden; }
+      #landing-carousel .carousel-item .carousel-cta:link, #landing-carousel .carousel-item .carousel-cta:visited {
+        background: linear-gradient(to top right, #009BDB, #00609B);
+        transition: all .1s ease-out; }
+      #landing-carousel .carousel-item .carousel-cta:hover {
+        text-decoration: none;
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 12px -3px rgba(254, 254, 254, 0.25); }
+      #landing-carousel .carousel-item .carousel-cta:active {
+        transform: translateY(1px);
+        box-shadow: none; }
+      #landing-carousel .carousel-item .carousel-cta svg {
+        margin-right: 1rem;
+        fill: currentColor;
+        height: 2.4rem;
+        width: 2.4rem; }
+    @media screen and (max-width: 576px) {
+      #landing-carousel .carousel-item h1 {
+        font-size: 2.4rem;
+        font-weight: 400; }
+      #landing-carousel .carousel-item .carousel-info {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0; }
+        #landing-carousel .carousel-item .carousel-info .age-rating {
+          font-size: .9rem;
+          height: 3.9rem;
+          width: 3.9rem; }
+        #landing-carousel .carousel-item .carousel-info .carousel-cta {
+          margin-left: 0;
+          margin-top: 2rem; } }
