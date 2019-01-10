@@ -87,10 +87,6 @@ footer {
   padding: .6rem 0 1.2rem;
   border-top: 1px solid #FEFEFE; }
 
-.landing-page {
-  height: 100vh;
-  position: relative; }
-
 #landing-carousel {
   height: 100%;
   width: 100%;
@@ -186,3 +182,37 @@ footer {
         #landing-carousel .carousel-item .carousel-info .carousel-cta {
           margin-left: 0;
           margin-top: 2rem; } }
+
+#bookingModal.modal form.modal-form {
+  margin: 2rem auto;
+  padding: 2rem 4rem; }
+  #bookingModal.modal form.modal-form .form-row {
+    margin-top: 2rem; }
+  #bookingModal.modal form.modal-form .inputWithIcon {
+    position: relative; }
+    #bookingModal.modal form.modal-form .inputWithIcon input[type] {
+      padding-left: 3rem; }
+    #bookingModal.modal form.modal-form .inputWithIcon i {
+      position: absolute;
+      left: 8px;
+      top: 0px;
+      padding: 8px; }
+  #bookingModal.modal form.modal-form h1.modal-promo {
+    font-size: 2.4rem;
+    line-height: 1.7;
+    color: #FEFEFE;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2.4rem;
+    border-radius: 3px;
+    background: linear-gradient(to bottom right, rgba(0, 96, 155, 0.8), rgba(0, 155, 219, 0.8)), url(/images/tickets.jpg);
+    background-size: cover;
+    background-position: center; }
+    #bookingModal.modal form.modal-form h1.modal-promo span {
+      font-weight: 900; }
+  #bookingModal.modal form.modal-form button.btn.btn-lg {
+    width: 100%; }
+
+.landing-page {
+  height: 100vh;
+  position: relative; }

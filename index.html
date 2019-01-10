@@ -7,7 +7,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <!-- Custom Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,900" rel="stylesheet">
     <!-- Custom CSS -->
@@ -17,8 +16,98 @@
 </head>
 <body>
 
-<header class="landing-page">
+<!-- Book a Ticket Modal -->
+<div id="bookingModal" class="modal fade" role="dialog"><!--Login Modal-->
+    <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book your ticket now!</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="form-row">
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="fName" class="sr-only">First Name</label>
+                            <input type="text" name="fName" id="fName" class="form-control form-control-lg" placeholder="First Name">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="lName" class="sr-only">Last Name</label>
+                            <input type="text" name="lName" id="lName" class="form-control form-control-lg" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="tel" class="sr-only">Phone</label>
+                            <input type="tel" name="tel" id="tel" class="form-control form-control-lg" placeholder="Phone">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <h1 class="col modal-promo">Don't forget our<br><span>2 for 1</span> Thursdays</h1>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="movie"><span class="fa fa-film"></span> Choose a movie</label>
+                            <select name="movie" id="movie" class="form-control form-control-lg">
+                                <option value="avengers" selected>Avengers: Infinity War</option>
+                                <option value="jurassic">Jurassic World: Fallen Kingdom</option>
+                                <option value="ralph">Ralph Breaks the Internet</option>
+                                <option value="bohemian">Bohemian Rhapsody</option>
+                                <option value="creed">Creed II</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="date"><span class="fa fa-calendar"></span> Choose a date</label>
+                            <input type="date" name="date" id="date" class="form-control form-control-lg">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="screening"><span class="fa fa-hourglass-start"></span> Choose a screening</label>
+                            <select name="screening" id="screening" class="form-control form-control-lg">
+                                <option value="1" selected>17:15</option>
+                                <option value="2">19:30</option>
+                                <option value="3">20:15</option>
+                                <option value="4">21:45</option>
+                                <option value="5">23:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="ticketNumber"><span class="fa fa-ticket"></span> Number of Tickets</label>
+                            <input type="number" name="ticketNumber" id="ticketNumber" class="form-control form-control-lg" placeholder="1" value="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 inputWithIcon">
+                            <label for="coupon" class="sr-only">Coupon Code</label>
+                            <input type="text" name="coupon" id="coupon" class="form-control form-control-lg" placeholder="Coupon Code">
+                            <i class="fa fa-gift"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <button class="btn btn-lg btn-secondary" type="button"  data-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <button class="btn btn-lg btn-primary" type="submit">Book Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+<header class="landing-page">
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div class="container">
@@ -39,16 +128,14 @@
                         <a href="#" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-outline-primary btn-lg nav-cta">Book a Ticket</button>
+                        <button type="button" class="btn btn-outline-primary btn-lg nav-cta" data-toggle="modal" data-target="#bookingModal">Book a Ticket</button>
                     </li>
                 </ul>
             </div>
         </div>
 
     </nav>
-
     <!-- Carousel -->
-    
     <div id="landing-carousel" class="carousel slide" data-ride="carousel">
         <!-- Carousel Indicators -->
         <ol class="carousel-indicators">
@@ -108,11 +195,24 @@
             </div>
         </div>
     </div>
-
-
 </header>
+
+
+
+<!-- Movie Schedule -->
+<div class=" test container">
+
+    
+        
     
 
+</div>
+
+
+
+
+    
+<!-- Footer -->
 <footer>
     <div class="container">
         <!-- Social Media Icons -->
@@ -144,8 +244,7 @@
         </div>
         <!-- Legal Text -->
         <p class="footer-legal">2018 &copy; TWIST / Designed & developed by Orfeas Nafpliotis.</p>
-    </div>
-    
+    </div>   
 </footer>
     
     

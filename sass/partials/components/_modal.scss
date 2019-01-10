@@ -1,0 +1,49 @@
+#bookingModal.modal{
+
+    form.modal-form{
+        margin: 2rem auto;
+        padding: 2rem 4rem;
+
+        .form-row{
+            margin-top: 2rem;
+        }
+
+        .inputWithIcon{
+            position: relative;
+
+            input[type]{padding-left: 3rem;}
+
+            i{
+                position: absolute;
+                left: 8px;
+                top: 0px;
+                padding: 8px;
+            }
+        }
+
+        h1.modal-promo{
+            font-size: 2.4rem;
+            line-height: 1.7;
+            color: $color-white;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 2.4rem;
+            border-radius: 3px;
+
+            span{font-weight: 900;}
+
+            background: linear-gradient(to bottom right, rgba($color-primary-dark, .8), rgba($color-primary-light, .8)),
+                        url(/images/tickets.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        button.btn.btn-lg{
+            width: 100%;
+        }
+    }
+
+
+
+}
+
