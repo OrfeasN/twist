@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- Custom Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,900" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Title -->
+    <title>Twist, your local movie-theater</title>
+</head>
+<body>
+
+<!-- Book a Ticket Modal -->
+<div id="bookingModal" class="modal fade" role="dialog"><!--Login Modal-->
+    <div class="modal-dialog modal-lg" role="content">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Book your ticket now!</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form">
+                    <div class="form-row">
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="fName" class="sr-only">First Name</label>
+                            <input type="text" name="fName" id="fName" class="form-control form-control-lg" placeholder="First Name">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="lName" class="sr-only">Last Name</label>
+                            <input type="text" name="lName" id="lName" class="form-control form-control-lg" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="tel" class="sr-only">Phone</label>
+                            <input type="tel" name="tel" id="tel" class="form-control form-control-lg" placeholder="Phone">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="form-group col-sm-6 inputWithIcon">
+                            <label for="email" class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <h1 class="col modal-promo">Don't forget our<br><span>2 for 1</span> Thursdays</h1>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="movie"><span class="fa fa-film"></span> Choose a movie</label>
+                            <select name="movie" id="movie" class="form-control form-control-lg">
+                                <option value="avengers" selected>Avengers: Infinity War</option>
+                                <option value="jurassic">Jurassic World: Fallen Kingdom</option>
+                                <option value="ralph">Ralph Breaks the Internet</option>
+                                <option value="bohemian">Bohemian Rhapsody</option>
+                                <option value="creed">Creed II</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="date"><span class="fa fa-calendar"></span> Choose a date</label>
+                            <input type="date" name="date" id="date" class="form-control form-control-lg">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="screening"><span class="fa fa-hourglass-start"></span> Choose a screening</label>
+                            <select name="screening" id="screening" class="form-control form-control-lg">
+                                <option value="1" selected>17:15</option>
+                                <option value="2">19:30</option>
+                                <option value="3">20:15</option>
+                                <option value="4">21:45</option>
+                                <option value="5">23:00</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="ticketNumber"><span class="fa fa-ticket"></span> Number of Tickets</label>
+                            <input type="number" name="ticketNumber" id="ticketNumber" class="form-control form-control-lg" placeholder="1" value="1">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-5 inputWithIcon">
+                            <label for="coupon" class="sr-only">Coupon Code</label>
+                            <input type="text" name="coupon" id="coupon" class="form-control form-control-lg" placeholder="Coupon Code">
+                            <i class="fa fa-gift"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-2">
+                            <button class="btn btn-lg btn-secondary" type="button"  data-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="form-group col-sm-3">
+                            <button class="btn btn-lg btn-primary" type="submit">Book Now</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="hero-header">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-sm navbar-dark mb-2">
+        <div class="container">
+            <a href="/index.html" class="navbar-brand">Twist</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/playing.html" class="nav-link">What's On</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-primary btn-lg nav-cta" data-toggle="modal" data-target="#bookingModal">Book a Ticket</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero -->
+    <div class="hero hero-playing">
+        <div class="container">
+            <span>Take a look at</span>
+            <h1>What's on this week</h1>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Movie Schedule -->
+<div class="container">
+
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" id="monday-tab" data-toggle="tab" href="#monday" role="tab">Mon</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#tuesday" role="tab">Tues</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" id="today-tab" data-toggle="tab" href="#today" role="tab">Today</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="thursday-tab" data-toggle="tab" href="#thursday" role="tab">Thu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="friday-tab" data-toggle="tab" href="#friday" role="tab">Fri</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="saturday-tab" data-toggle="tab" href="#saturday" role="tab">Sat</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="sunday-tab" data-toggle="tab" href="#sunday" role="tab">Sun</a>
+        </li>
+      </ul>
+
+      <div class="tab-content schedule">
+        <div class="tab-pane fade" id="monday" role="tabpanel">
+            <div class="container schedule-movie">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Fantasy</h4>
+                            <h2>Avengers: Infinity War</h2>
+                            <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Sci-Fi</h4>
+                            <h2>Jurassic World: Fallen Kingdom</h2>
+                            <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Animation, Adventure, Comedy</h4>
+                            <h2>Ralph Breaks the Internet</h2>
+                            <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Biography, Drama, Music</h4>
+                            <h2>Bohemian Rhapsody</h2>
+                            <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Drama, Sport</h4>
+                            <h2>Creed II</h2>
+                            <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tuesday" role="tabpanel">
+            <div class="container schedule-movie">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Fantasy</h4>
+                            <h2>Avengers: Infinity War</h2>
+                            <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Sci-Fi</h4>
+                            <h2>Jurassic World: Fallen Kingdom</h2>
+                            <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Animation, Adventure, Comedy</h4>
+                            <h2>Ralph Breaks the Internet</h2>
+                            <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Biography, Drama, Music</h4>
+                            <h2>Bohemian Rhapsody</h2>
+                            <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Drama, Sport</h4>
+                            <h2>Creed II</h2>
+                            <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="today" role="tabpanel">
+            <div class="container schedule-movie">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Action, Adventure, Fantasy</h4>
+                        <h2>Avengers: Infinity War</h2>
+                        <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Action, Adventure, Sci-Fi</h4>
+                        <h2>Jurassic World: Fallen Kingdom</h2>
+                        <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Animation, Adventure, Comedy</h4>
+                        <h2>Ralph Breaks the Internet</h2>
+                        <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Biography, Drama, Music</h4>
+                        <h2>Bohemian Rhapsody</h2>
+                        <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Drama, Sport</h4>
+                        <h2>Creed II</h2>
+                        <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="thursday" role="tabpanel">
+            <div class="container schedule-movie">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Fantasy</h4>
+                            <h2>Avengers: Infinity War</h2>
+                            <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Sci-Fi</h4>
+                            <h2>Jurassic World: Fallen Kingdom</h2>
+                            <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Animation, Adventure, Comedy</h4>
+                            <h2>Ralph Breaks the Internet</h2>
+                            <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Biography, Drama, Music</h4>
+                            <h2>Bohemian Rhapsody</h2>
+                            <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Drama, Sport</h4>
+                            <h2>Creed II</h2>
+                            <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="friday" role="tabpanel">
+            <div class="container schedule-movie">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Action, Adventure, Fantasy</h4>
+                        <h2>Avengers: Infinity War</h2>
+                        <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Action, Adventure, Sci-Fi</h4>
+                        <h2>Jurassic World: Fallen Kingdom</h2>
+                        <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Animation, Adventure, Comedy</h4>
+                        <h2>Ralph Breaks the Internet</h2>
+                        <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>17:15</li>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Biography, Drama, Music</h4>
+                        <h2>Bohemian Rhapsody</h2>
+                        <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                    </div>
+                    <div class="col-sm-10">
+                        <h4>Drama, Sport</h4>
+                        <h2>Creed II</h2>
+                        <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                        <a href="/movie.html">Full Synopsis</a>
+                        <div class="schedule-movie__times">
+                            <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                            <ul>
+                                <li>19:30</li>
+                                <li>20:15</li>
+                                <li>21:45</li>
+                                <li>23:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="saturday" role="tabpanel">
+            <div class="container schedule-movie">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Fantasy</h4>
+                            <h2>Avengers: Infinity War</h2>
+                            <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Sci-Fi</h4>
+                            <h2>Jurassic World: Fallen Kingdom</h2>
+                            <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Animation, Adventure, Comedy</h4>
+                            <h2>Ralph Breaks the Internet</h2>
+                            <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Biography, Drama, Music</h4>
+                            <h2>Bohemian Rhapsody</h2>
+                            <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Drama, Sport</h4>
+                            <h2>Creed II</h2>
+                            <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="Sunday" role="tabpanel">
+            <div class="container schedule-movie">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/avengers-landscape.jpg" alt="Avengers">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Fantasy</h4>
+                            <h2>Avengers: Infinity War</h2>
+                            <p>The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/jurassic-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Action, Adventure, Sci-Fi</h4>
+                            <h2>Jurassic World: Fallen Kingdom</h2>
+                            <p>When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/ralph-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Animation, Adventure, Comedy</h4>
+                            <h2>Ralph Breaks the Internet</h2>
+                            <p>Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/bohemian-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Biography, Drama, Music</h4>
+                            <h2>Bohemian Rhapsody</h2>
+                            <p>A chronicle of the years leading up to Queen's legendary appearance at the Live Aid (1985) concert.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/images/creed-poster.jpg" alt="Jurassic World">
+                        </div>
+                        <div class="col-sm-10">
+                            <h4>Drama, Sport</h4>
+                            <h2>Creed II</h2>
+                            <p>Under the tutelage of Rocky Balboa, heavyweight contender Adonis Creed faces off against Viktor Drago, son of Ivan Drago.</p>
+                            <a href="/movie.html">Full Synopsis</a>
+                            <div class="schedule-movie__times">
+                                <span><i class="fa fa-hourglass-start"></i> Viewing Times</span>
+                                <ul>
+                                    <li>17:15</li>
+                                    <li>19:30</li>
+                                    <li>20:15</li>
+                                    <li>21:45</li>
+                                    <li>23:00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+      </div>
+    
+        
+    
+
+</div>
+
+
+
+
+    
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <!-- Social Media Icons -->
+        <div class="social-list col-sm-4 offset-sm-4">
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-facebook"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-twitter"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-instagram"></use></svg>
+            </a>
+            <a href="" class="social-list__link">
+                <svg class="social-list__icon"><use xlink:href="images/sprite.svg#icon-youtube"></use></svg>
+            </a>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="footer-contact col-sm-6 offset-sm-3">
+            <span class="footer-contact__text">
+                <svg class="footer-contact__icon"><use xlink:href="images/sprite.svg#icon-map"></use></svg>
+                    24 Centeroad St., Athens
+            </span>
+            <span class="footer-contact__text">
+                <svg class="footer-contact__icon"><use xlink:href="images/sprite.svg#icon-whatsapp"></use></svg>
+                    0330 123 4567
+            </span>
+        </div>
+        <!-- Legal Text -->
+        <p class="footer-legal">2018 &copy; TWIST / Designed & developed by Orfeas Nafpliotis.</p>
+    </div>   
+</footer>
+    
+    
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

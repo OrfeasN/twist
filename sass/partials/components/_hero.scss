@@ -1,0 +1,45 @@
+.hero-header{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    margin-bottom: 12rem;
+}
+
+.hero-playing{
+    background: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)),
+                url(/images/playing.jpg);
+}
+.hero-about{
+    background: linear-gradient(rgba($color-black, .7), rgba($color-black, .7)),
+                url(/images/tickets.jpg);
+}
+
+.hero{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .container{
+        height: 100%;;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 3rem 0;
+    }
+
+    span{
+        text-transform: uppercase;
+        color: $color-primary-light;
+    }
+
+    h1{
+        font-size: 3.9rem;
+        font-weight: 200;
+        color: $color-white;
+    }
+}
+

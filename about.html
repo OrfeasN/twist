@@ -107,9 +107,9 @@
     </div>
 </div>
 
-<header class="landing-page">
+<header class="hero-header">
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-sm navbar-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark mb-2">
         <div class="container">
             <a href="/index.html" class="navbar-brand">Twist</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
@@ -133,79 +133,69 @@
                 </ul>
             </div>
         </div>
-
     </nav>
-    <!-- Carousel -->
-    <div id="landing-carousel" class="carousel slide" data-ride="carousel">
-        <!-- Carousel Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#landing-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#landing-carousel" data-slide-to="1"></li>
-            <li data-target="#landing-carousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Carousel Slides -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="container">
-                    <h4>Action, Adventure, Fantasy</h4>
-                    <h1>Avengers: Infinity War</h1>
-                    <div class="row d-none d-sm-block">
-                        <p class="col-sm-8">The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.</p>
-                    </div>
-                    <div class="carousel-info">
-                        <div class="age-rating">PG-13</div>
-                        <a href="#" class="carousel-cta">
-                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
-                            More info
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <h4>Action, Adventure, Sci-Fi</h4>
-                    <h1>Jurassic World: Fallen Kingdom</h1>
-                    <div class="row d-none d-sm-block">
-                        <p class="col-sm-8">When the island's dormant volcano begins roaring to life, Owen and Claire mount a campaign to rescue the remaining dinosaurs from this extinction-level event.</p>
-                    </div>
-                    <div class="carousel-info">
-                        <div class="age-rating">PG-13</div>
-                        <a href="#" class="carousel-cta">
-                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
-                            More info
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <h4>Animation, Adventure, Comedy</h4>
-                    <h1>Ralph Breaks the Internet</h1>
-                    <div class="row d-none d-sm-block">
-                        <p class="col-sm-8">Six years after the events of "Wreck-It Ralph," Ralph and Vanellope, now friends, discover a wi-fi router in their arcade, leading them into a new adventure.</p>
-                    </div>
-                    <div class="carousel-info">
-                        <div class="age-rating">PG</div>
-                        <a href="#" class="carousel-cta">
-                            <svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>
-                            More info
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <!-- Hero -->
+    <div class="hero hero-about">
+        <div class="container">
+            <span>Got some quenstions?</span>
+            <h1>Please contact us</h1>
         </div>
     </div>
 </header>
 
 
 
-<!-- Movie Schedule -->
-<div class=" test container">
+<div class="container">
+    <div class="row about-info">
+        <div class="col-sm-4">
+            <img class="about-info__img" src="/images/theater-front.jpg" alt="Twist Movie Theater">
+        </div>
+        <div class="col-sm-8">
+            <h1>Twist</h1>
+            <h4>your local movie-theater</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt ducimus dolore fugiat officiis doloribus aut cupiditate fugit recusandae iusto corrupti, excepturi porro possimus laborum vitae eligendi voluptas deleniti. Reprehenderit, libero sapiente! Iusto ex, dicta excepturi illum assumenda corporis quia temporibus, aperiam nobis eligendi exercitationem praesentium. Corrupti, dicta? Libero placeat praesentium reprehenderit numquam alias.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, exercitationem. Porro voluptate, sunt aut odit necessitatibus magni eveniet minus, vero, officiis sint sequi a.</p>
+        </div>
+    </div>
 
-    
-        
-    
-
+    <div class="row about-contact">
+        <div class="col">
+            <h3>Send a Message</h3>
+            <form>
+                <div class="form-group">
+                    <label class="sr-only" for="name">Name</label>
+                    <input type="text" class="form-control form-control-lg" id="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="email">Email</label>
+                    <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="name">Where did you hear about us?</label>
+                    <input type="text" class="form-control form-control-lg" id="name" placeholder="Where did you hear about us?">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="message">Message</label>
+                    <textarea class="form-control form-control-lg" id="message" rows="3" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary">Send Message</button>
+            </form>
+        </div>
+        <div class="col about-contact__details-box">
+            <div class="about-contact__details">
+                <i class="fa fa-facebook"></i>
+                <span>FACEBOOK<br>/twist</span>
+            </div>
+            <div class="about-contact__details">
+                <i class="fa fa-map"></i>
+                <span>ADDRESS<br>342 Beale St, Athens</span>
+            </div>
+            <div class="about-contact__details">
+                <i class="fa fa-phone"></i>
+                <span>TELEPHONE<br>0330 123 4567</span>
+            </div>
+        </div>
+    </div>
 </div>
 
 

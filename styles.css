@@ -213,6 +213,119 @@ footer {
   #bookingModal.modal form.modal-form button.btn.btn-lg {
     width: 100%; }
 
+.hero-header {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  margin-bottom: 12rem; }
+
+.hero-playing {
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(/images/playing.jpg); }
+
+.hero-about {
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(/images/tickets.jpg); }
+
+.hero {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0; }
+  .hero .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 3rem 0; }
+  .hero span {
+    text-transform: uppercase;
+    color: #009BDB; }
+  .hero h1 {
+    font-size: 3.9rem;
+    font-weight: 200;
+    color: #FEFEFE; }
+
 .landing-page {
   height: 100vh;
   position: relative; }
+
+.schedule-movie {
+  margin: 6rem auto; }
+  .schedule-movie .row {
+    padding: 3rem 0; }
+  .schedule-movie .row:not(:last-of-type) {
+    border-bottom: 1px solid #EDEDED; }
+  .schedule-movie img {
+    width: 100%;
+    height: 23rem;
+    background-size: c;
+    background-position: center;
+    border-radius: 10px; }
+  .schedule-movie h4 {
+    text-transform: uppercase;
+    color: #009BDB; }
+  .schedule-movie a {
+    text-transform: uppercase; }
+  .schedule-movie__times {
+    display: flex;
+    align-items: baseline;
+    margin-top: 2rem; }
+    .schedule-movie__times span {
+      text-transform: uppercase; }
+    .schedule-movie__times ul {
+      display: flex;
+      list-style: none; }
+      .schedule-movie__times ul li {
+        border: 1px solid #111111;
+        padding: .6rem 1.2rem;
+        border-radius: 3px; }
+      .schedule-movie__times ul li:not(:first-of-type) {
+        margin-left: 1.5rem; }
+
+@media only screen and (max-width: 500px) {
+  .schedule-movie__times {
+    flex-direction: column; }
+    .schedule-movie__times ul {
+      flex-direction: column; }
+      .schedule-movie__times ul li {
+        margin: 1rem 0; }
+    .schedule-movie__times li:not(:first-of-type) {
+      margin-right: 0rem; } }
+
+.about-info {
+  margin-bottom: 12rem; }
+  .about-info__img {
+    width: 100%;
+    height: 30rem;
+    background-size: cover; }
+  .about-info h1 {
+    font-size: 6.4rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #00609B; }
+  .about-info h4 {
+    font-size: 2.4rem;
+    font-weight: 200; }
+
+.about-contact {
+  margin-bottom: 9rem; }
+  .about-contact h3 {
+    text-transform: uppercase;
+    color: #009BDB;
+    border-bottom: 1px solid #EDEDED;
+    margin-bottom: 2rem; }
+  .about-contact__details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3rem 9rem; }
+  .about-contact__details {
+    display: flex; }
+    .about-contact__details i {
+      display: block;
+      margin-right: 2rem;
+      font-size: 3.9rem;
+      color: #009BDB; }
