@@ -4,7 +4,12 @@
 }
 
 .movies{
-    margin: 12rem auto;
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+    background: linear-gradient(to bottom, rgba($color-white, 1), rgba($color-white, .8)),
+                url(/images/movies.jpg);
+    background-size: cover;
+    background-position: center;
 
     h2{
         color: $color-primary-light;
