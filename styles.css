@@ -251,6 +251,65 @@ footer {
   height: 100vh;
   position: relative; }
 
+.movies {
+  margin: 12rem auto; }
+  .movies h2 {
+    color: #009BDB;
+    font-size: 3.9rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-bottom: 5px solid #009BDB;
+    padding-bottom: 2rem;
+    margin-bottom: 6rem; }
+  .movies img {
+    width: 100%;
+    height: 30rem;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 3rem; }
+  .movies h3 {
+    font-size: 2.4rem;
+    color: #009BDB; }
+
+.offer {
+  background: linear-gradient(to bottom right, rgba(0, 96, 155, 0.65), rgba(0, 155, 219, 0.65)), url(/images/theater.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  color: #FEFEFE; }
+  .offer h1 {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 3.9rem;
+    border-bottom: 1px solid #FEFEFE; }
+    .offer h1 span {
+      font-weight: 900;
+      font-size: 6.4rem; }
+  .offer .offer__cta {
+    background-color: #111111;
+    color: #111111;
+    text-transform: uppercase;
+    display: inline-flex;
+    padding: 1rem 2rem;
+    border-radius: 3.5rem;
+    align-items: center;
+    cursor: pointer; }
+    .offer .offer__cta svg {
+      fill: currentColor;
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: 1rem; }
+
+.phone {
+  text-align: center;
+  margin: 6rem auto; }
+  .phone p {
+    font-size: 2.4rem; }
+  .phone span {
+    font-size: 3.9rem;
+    color: #009BDB; }
+
 .schedule-movie {
   margin: 6rem auto; }
   .schedule-movie .row {
